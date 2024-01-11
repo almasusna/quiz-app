@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body id="body">
+    <div id= "app" class="app">
+        <h1 class="heading">Тест на знание требований ИБ СГО РК</h1>
+        <div class="quiz" id="quiz">
+            <h2 id="question">Введите свои данные на латинице</h2>
+            <div class="form">
+                <input id="last-name" type="text" class="input"  placeholder="Фамилия">
+                <input id="first-name" type="text" class="input"  placeholder="Имя">
+                <select id="options-dep" class="options" name="unit">
+                    <option value="1 департамент">1 департамент</option>
+                    <option value="2 департамент">2 департамент</option>
+                    <option value="3 департамент">3 департамент</option>
+                    <option value="4 департамент">4 департамент</option>
+                    <option value="5 департамент">5 департамент</option>
+                    <option value="6 департамент">6 департамент</option>
+                    <option value="7 департамент">7 департамент</option>
+                    <option value="8 департамент">8 департамент</option>
+                    <option value="9 департамент">9 департамент</option>
+                    <option value="10 департамент">10 департамент</option>
+                    <option value="11 департамент">11 департамент</option>
+                    <option value="УСБ">УСБ</option>
+                    <option value="СОП">СОП</option>
+                    <option value="Аппарат СГО РК">Аппарат СГО РК</option>
+                    <option value="ОУ СОН СГО РК">ОУ СОН СГО РК</option>
+                    <option value="В/ч 0111">В/ч 0111</option>
+                    <option value="В/ч 0112">В/ч 0112</option>
+                    <option value="В/ч 0116">В/ч 0116</option>
+                </select> 
+                <select id="options-var" class="options" name="var">
+                    <option value="1">1 вариант</option>
+                    <option value="2">2 вариант</option>
+                    <option value="3">3 вариант</option>
+                </select> 
+                <p id="error"></p>
+                <div class="buttons">
+                    <button class="btn-enter" id="db-btn">База</button>
+                    <button class="btn-enter" id="start-btn">Начать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="db.js"></script>
+</body>
+</html>
