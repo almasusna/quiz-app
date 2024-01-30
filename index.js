@@ -1,3 +1,4 @@
+const pid = document.getElementById("pid")
 const lastName = document.getElementById("last-name")
 const firstName = document.getElementById("first-name")
 const department = document.getElementById("options-dep")
@@ -43,6 +44,7 @@ async function displayResults() {
 }
 
 async function saveUser() {
+    const pidVal = pid.value;
     const lastNameValue = lastName.value;
     const firstNameValue = firstName.value;
     const departmentValue = department.value;
@@ -59,6 +61,7 @@ async function saveUser() {
         return
     }
 
+    user.pid = pidVal;
     user.firstName = firstNameValue;
     user.lastName = lastNameValue;
     user.department = departmentValue;
@@ -122,6 +125,7 @@ async function displayTableResults( ) {
     <table class="styled-table">
         <thead>
             <tr>
+                <th>ИИН</th>
                 <th>Имя</th>
                 <th>Фамилия</th>
                 <th>Департамент</th>
@@ -133,11 +137,12 @@ async function displayTableResults( ) {
     `
     for(let i = 0; i < usersData.data.users.length; i++) {
         obj += '<tr>'   
+        obj += `<td> ${usersData.data.users[i]["iin"]} </td>`
         obj += `<td> ${usersData.data.users[i]["firstName"]} </td>`
         obj += `<td> ${usersData.data.users[i]["lastName"]} </td>`
         obj += `<td> ${usersData.data.users[i]["department"]} </td>`
         obj += `<td> ${usersData.data.users[i]["variant"]} </td>`
-        obj += `<td> ${usersData.data.users[i]["score"]["score"]} </td>`
+        // obj += `<td> ${usersData.data.users[i]["score"]["score"]} </td>`
         obj += '</tr>' 
     }
     obj += `</tbody> </table>`
