@@ -129,7 +129,7 @@ async function displayTableResults( ) {
                 <th>Имя</th>
                 <th>Фамилия</th>
                 <th>Департамент</th>
-                <th>Вариант</th>
+                <th>Попытка</th>
                 <th>Баллы</th>
             </tr>
         </thead>
@@ -137,12 +137,12 @@ async function displayTableResults( ) {
     `
     for(let i = 0; i < usersData.data.users.length; i++) {
         obj += '<tr>'   
-        obj += `<td> ${usersData.data.users[i]["iin"]} </td>`
-        obj += `<td> ${usersData.data.users[i]["firstName"]} </td>`
-        obj += `<td> ${usersData.data.users[i]["lastName"]} </td>`
+        obj += `<td> ${usersData.data.users[i]["_id"]} </td>`
+        obj += `<td> ${usersData.data.users[i]["name"]} </td>`
+        obj += `<td> ${usersData.data.users[i]["surname"]} </td>`
         obj += `<td> ${usersData.data.users[i]["department"]} </td>`
-        obj += `<td> ${usersData.data.users[i]["variant"]} </td>`
-        // obj += `<td> ${usersData.data.users[i]["score"]["score"]} </td>`
+        obj += `<td> ${usersData.data.users[i]["attempt"] ? usersData.data.users[i]["attempt"].toString() : "-"} </td>`
+        obj += `<td> ${usersData.data.users[i]["score"]} </td>`
         obj += '</tr>' 
     }
     obj += `</tbody> </table>`
